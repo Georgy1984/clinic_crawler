@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rent{% endblock %}
+
+{% block body %}
+    <h1>Rent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rent.id }}</td>
+            </tr>
+            <tr>
+                <th>Vehicle_id</th>
+                <td>{{ rent.vehicleId }}</td>
+            </tr>
+            <tr>
+                <th>Driver_id</th>
+                <td>{{ rent.driverId }}</td>
+            </tr>
+            <tr>
+                <th>Cost_total</th>
+                <td>{{ rent.costTotal }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ rent.status }}</td>
+            </tr>
+            <tr>
+                <th>Is_allowed_zone_left</th>
+                <td>{{ rent.isAllowedZoneLeft ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Location_start</th>
+                <td>{{ rent.locationStart }}</td>
+            </tr>
+            <tr>
+                <th>Location_end</th>
+                <td>{{ rent.locationEnd }}</td>
+            </tr>
+            <tr>
+                <th>Is_active</th>
+                <td>{{ rent.isActive ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Finished_at</th>
+                <td>{{ rent.finishedAt ? rent.finishedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_rent_index') }}">back to list</a>
+
+    <a href="{{ path('app_rent_edit', {'id': rent.id}) }}">edit</a>
+
+    {{ include('rent/_delete_form.html.twig') }}
+{% endblock %}

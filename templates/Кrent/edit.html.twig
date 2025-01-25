@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Rent{% endblock %}
+
+{% block body %}
+    <h1>Edit Rent</h1>
+
+    {{ include('Кrent/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app__rent_index') }}">back to list</a>
+
+    {{ include('Кrent/_delete_form.html.twig') }}
+{% endblock %}
